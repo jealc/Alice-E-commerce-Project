@@ -84,3 +84,43 @@ submitMessageButton.addEventListener("click", () => {
         chatArea.innerHTML += `<p><strong>Customer Care:</strong> Thank you for your message. We'll get back to you shortly.</p>`;
     }
 });
+
+
+// Function to open the modal and populate it with data
+function openModal(shoeName, shoePrice, shoeImageSrc) {
+    const modal = document.getElementById("shoeModal");
+    const modalShoeName = document.getElementById("modal-shoe-name");
+    const modalShoePrice = document.getElementById("modal-shoe-price");
+    const modalShoeImage = document.getElementById("modal-shoe-image");
+  
+    modal.style.display = "block";
+    modalShoeName.textContent = shoeName;
+    modalShoePrice.textContent = shoePrice;
+    modalShoeImage.src = shoeImageSrc;
+  }
+  
+  // Event listener to open the modal when the "View" button is clicked
+  const viewButtons = document.querySelectorAll(".view-button");
+  viewButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      const shoeName = document.querySelectorAll(".shoe-name")[index].textContent;
+      const shoePrice = document.querySelectorAll(".shoe-price")[index].textContent;
+      const shoeImageSrc = document.querySelectorAll(".shoe-image")[index].src;
+      openModal(shoeName, shoePrice, shoeImageSrc);
+    });
+  });
+  
+  // Event listener to close the modal when the close button or outside the modal is clicked
+  const modal = document.getElementById("shoeModal");
+  const closeBtn = document.getElementsByClassName("close")[0];
+  
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+  

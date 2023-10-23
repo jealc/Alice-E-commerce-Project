@@ -443,3 +443,48 @@ input {
     background-color: black;
     color: white;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 150;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+  
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    height: 500px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+.shoe-details-modal {
+    display: flex;
+    float: left;
+}
+
+.shoe-image-modal {
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+}
