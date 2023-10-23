@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const cartButton = document.getElementById("cart-button");
     const cartModal = document.getElementById("cart-modal");
-    const closeModal = document.getElementById("close-modal");
+    const closeCart = document.getElementById("close-cart");
     const cartItems = document.getElementById("cart-items");
     const totalPrice = document.getElementById("total-price");
     const checkoutButton = document.getElementById("checkout-button");
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Event listener to close the cart modal
-    closeModal.addEventListener("click", function () {
+    closeCart.addEventListener("click", function () {
         cartModal.style.display = "none";
     });
 
@@ -135,9 +135,9 @@ closeChatButton.addEventListener("click", () => {
 // JavaScript to send and display messages
 const chatArea = document.getElementById("chat-area");
 const userMessageInput = document.getElementById("user-message");
-const sendMessageButton = document.getElementById("submit-message");
+const submitMessageButton = document.getElementById("submit-message");
 
-sendMessageButton.addEventListener("click", () => {
+submitMessageButton.addEventListener("click", () => {
     const userMessage = userMessageInput.value;
     if (userMessage.trim() !== "") {
         // Append the user's message to the chat area
