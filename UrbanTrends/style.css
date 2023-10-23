@@ -87,10 +87,12 @@ header{
     cursor: pointer;
 }
 
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+.cart-items {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 10px;
 }
 
 #checkout-button {
@@ -290,17 +292,61 @@ input {
 }
 
 .item-box {
-    background-color: darkgray;
+    background-color: white;
     color: bisque;
-    height: 300px;
+    height: 355px;
     width: 300px;
     border-radius: 10px;
-    transition: transform 0.2s ease;
     cursor: pointer;
 }
 
-.item-box:hover {
-    transform: scale(1.05);
+.shoe-image-container {
+    max-height: 200px;
+    overflow: hidden;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoe-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.shoe-details {
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.shoe-name {
+    font-weight: bold;
+    color: black;
+
+}
+
+.shoe-price {
+    color: darkred; 
+    font-size: 18px;
+}
+
+.view-button {
+    background-color: darkgray; 
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.view-button:hover {
+    background-color: black;
+    color: white;
 }
 
 #load-more-section {
@@ -329,11 +375,13 @@ input {
     font-weight: bold;
     font-family: cursive;
     padding: 10px 20px;
+    border: 1px solid black;
     border-radius: 50px;
     cursor: pointer;
 }
 
 .chat-button:hover {
+    border: 2px solid white;
     background-color: black;
     color: white;
 }
