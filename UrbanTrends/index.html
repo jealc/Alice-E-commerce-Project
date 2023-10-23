@@ -29,13 +29,34 @@
     </div>
     <div id="cart-modal" class="modal">
       <div class="modal-content">
-          <span class="close" id="close-modal">&times;</span>
+          <span class="close-modal" id="close-modal">&times;</span>
           <h2>Your Cart</h2>
           <div id="cart-items"></div>
           <p>Total: KSH<span id="total-price">0.00</span></p>
           <button id="checkout-button">Checkout</button>
       </div>
-  </div>
+    </div>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close-popup" id="close-popup">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+      </div>
+    </div>  
     <section class="landing">
         <div class="left-box">Our Store</div>
         <div class="center-box">
@@ -54,14 +75,14 @@
     <section>
         <h1 class="shouter">Check Out The All Latest Trends !</h1>
         <div class="items">
-            <div class="item-box">Item Here</div>
-            <div class="item-box">Item Here</div>
-            <div class="item-box">Item Here</div>
-            <div class="item-box">Item Here</div>
-            <div class="item-box">Item Here</div>
-            <div class="item-box">Item Here</div>
-            <div class="item-box">Item Here</div>
-            <div class="item-box">Item Here</div>
+          <div class="item-box">Item Here</div>
+          <div class="item-box">Item Here</div>
+          <div class="item-box">Item Here</div>
+          <div class="item-box">Item Here</div>
+          <div class="item-box">Item Here</div>
+          <div class="item-box">Item Here</div>
+          <div class="item-box">Item Here</div>
+          <div class="item-box">Item Here</div>
         </div>
     </section>
     <div id="load-more-section">
@@ -69,6 +90,15 @@
     </div>
     <div class="chat-button" id="chat-button">
         <i class="fas fa-comment"></i> Chat
+    </div>
+    <div id="chat-modal" class="chat-modal">
+      <div class="chatmodal-content">
+        <span class="close-chat" id="close-chat">&times;</span>
+        <h2>Talk to Customer Care</h2>
+        <div class="chat-area" id="chat-area"></div>
+        <input type="text" id="user-message" placeholder="Type your message">
+        <button id="submit-message">Submit</button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
