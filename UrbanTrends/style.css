@@ -276,6 +276,7 @@ input {
     font-size: 18px;
     font-family: cursive;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #content-box1:hover {
@@ -283,7 +284,7 @@ input {
 }
 
 #content-box2 {
-    background-image: url(https://plus.unsplash.com/premium_photo-1673468922223-bc2ad3675159?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2VsbHxlbnwwfHwwfHx8MA%3D%3D);
+    background-image: url(https://img.freepik.com/premium-photo/golden-correct-sign-with-five-stars-inside-message-box-best-quality-assurance-guarantee-product-iso-service-concept-by-3d-render_50039-3733.jpg);
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -294,6 +295,7 @@ input {
     font-size: 18px;
     font-family: cursive;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #content-box2:hover {
