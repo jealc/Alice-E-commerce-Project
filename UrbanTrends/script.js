@@ -220,7 +220,7 @@ placeOrderButton.addEventListener("click", () => {
     alert("Please provide delivery location and phone number.");
   } else {
     // Display confirmation message
-    alert("Your order has been placed and will be delivered within three to five working days to the provided location.");
+    alert("Your order has been placed and will be delivered within three to five working days to the provided location. Pyment will be done in cash upon delivery");
 
     // Create a receipt and add it to the "Orders box"
     const ordersBox = document.querySelector(".orders-box");
