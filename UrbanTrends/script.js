@@ -88,41 +88,35 @@ submitMessageButton.addEventListener("click", () => {
 
 // Function to open the modal and populate it with data
 function openModal(shoeName, shoePrice, shoeImageSrc) {
-    const modal = document.getElementById("shoeModal");
-    const modalShoeName = document.getElementById("modal-shoe-name");
-    const modalShoePrice = document.getElementById("modal-shoe-price");
-    const modalShoeImage = document.getElementById("modal-shoe-image");
-  
-    modal.style.display = "block";
-    modalShoeName.textContent = shoeName;
-    modalShoePrice.textContent = shoePrice;
-    modalShoeImage.src = shoeImageSrc;
-  }
-  
-  // Event listener to open the modal when the "View" button is clicked
-  const viewButtons = document.querySelectorAll(".view-button");
-  viewButtons.forEach((button, index) => {
-    button.addEventListener("click", () => {
-      const shoeName = document.querySelectorAll(".shoe-name")[index].textContent;
-      const shoePrice = document.querySelectorAll(".shoe-price")[index].textContent;
-      const shoeImageSrc = document.querySelectorAll(".shoe-image")[index].src;
-      openModal(shoeName, shoePrice, shoeImageSrc);
-    });
-  });
-  
-  // Event listener to close the modal when the close button or outside the modal is clicked
   const modal = document.getElementById("shoeModal");
-  //const closeBtn = document.getElementsByClassName("close")[0];
-  
-  //closeBtn.addEventListener("click", () => {
-  //  modal.style.display = "none";
-  //});
-  
-  window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
+  const modalShoeName = document.getElementById("modal-shoe-name");
+  const modalShoePrice = document.getElementById("modal-shoe-price");
+  const modalShoeImage = document.getElementById("modal-shoe-image");
+
+  modal.style.display = "block";
+  modalShoeName.textContent = shoeName;
+  modalShoePrice.textContent = shoePrice;
+  modalShoeImage.src = shoeImageSrc;
+}
+
+// Event listener to open the modal when the "View" button is clicked
+const viewButtons = document.querySelectorAll(".view-button");
+viewButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    const shoeName = document.querySelectorAll(".shoe-name")[index].textContent;
+    const shoePrice = document.querySelectorAll(".shoe-price")[index].textContent;
+    const shoeImageSrc = document.querySelectorAll(".shoe-image")[index].src;
+    openModal(shoeName, shoePrice, shoeImageSrc);
   });
+});
+
+// Event listener to close the modal when the outside of the modal is clicked
+const modal = document.getElementById("shoeModal");
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
 
 // Function to add an item to the cart
 function addToCart() {
@@ -149,7 +143,7 @@ function addToCart() {
   document.getElementById("total-price").textContent = total.toFixed(2);
 
   // Close the product modal
-  document.getElementById("shoeModal").style.display = "none";
+  modal.style.display = "none";
 }
 
 // Function to calculate the total price of items in the cart
@@ -184,3 +178,89 @@ const addToCartButton = document.getElementById("addToCartButton");
 addToCartButton.addEventListener("click", () => {
   addToCart();
 });
+
+// Event listener to clear the cart when the "Clear Cart" button is clicked
+const clearCartButton = document.getElementById("clear-cart-button");
+clearCartButton.addEventListener("click", () => {
+  const cartItems = document.getElementById("cart-items");
+  while (cartItems.firstChild) {
+    cartItems.removeChild(cartItems.firstChild);
+  }
+  document.getElementById("total-price").textContent = "0.00";
+});
+
+
+
+const checkoutButton = document.getElementById("checkout-button");
+const checkoutModal = document.getElementById("checkout-modal");
+const placeOrderButton = document.getElementById("place-order-button");
+
+checkoutButton.addEventListener("click", () => {
+  const cartItems = document.querySelectorAll(".cart-item");
+  if (cartItems.length === 0) {
+    alert("Your cart is empty. Add items before checking out.");
+  } else {
+    const cartModal = document.getElementById("cart-modal");
+    cartModal.style.display = "none"; // Close the cart modal when opening the checkout
+    checkoutModal.style.display = "block";
+
+    // Update the total in the checkout modal to match the cart total
+    const total = calculateTotal();
+    document.getElementById("checkout-total").textContent = total.toFixed(2);
+  }
+});
+
+placeOrderButton.addEventListener("click", () => {
+  const cartItems = document.querySelectorAll(".cart-item");
+  const total = calculateTotal();
+  const deliveryLocation = document.getElementById("delivery-location").value;
+  const phoneNumber = document.getElementById("phone-number").value;
+
+  if (!deliveryLocation || !phoneNumber) {
+    alert("Please provide delivery location and phone number.");
+  } else {
+    // Display confirmation message
+    alert("Your order has been placed and will be delivered within three to five working days to the provided location.");
+
+    // Create a receipt and add it to the "Orders box"
+    const ordersBox = document.querySelector(".orders-box");
+    const receipt = document.createElement("div");
+    receipt.className = "order-receipt";
+    receipt.innerHTML = `
+      <p>Items:</p>
+      <ul>
+        ${[...cartItems].map((item) => `<li>${item.textContent}</li>`).join("")}
+      </ul>
+      <p>Total: KSH ${total.toFixed(2)}</p>
+      <p>Delivery Location: ${deliveryLocation}</p>
+      <p>Phone Number: ${phoneNumber}</p>
+    `;
+    ordersBox.appendChild(receipt);
+
+    // Clear the cart
+    const cartItemsContainer = document.getElementById("cart-items");
+    while (cartItemsContainer.firstChild) {
+      cartItemsContainer.removeChild(cartItemsContainer.firstChild);
+    }
+    document.getElementById("total-price").textContent = "0.00";
+    checkoutModal.style.display = "none";
+  }
+});
+
+closeCartButton.addEventListener("click", () => {
+  const cartModal = document.getElementById("cart-modal");
+  cartModal.style.display = "none";
+});
+
+function calculateTotal() {
+  const cartItems = document.querySelectorAll(".cart-item");
+  let total = 0;
+
+  cartItems.forEach((item) => {
+    const priceString = item.querySelector("p:last-child").textContent;
+    const price = parseFloat(priceString.replace("KSH ", ""));
+    total += price;
+  });
+
+  return total;
+}

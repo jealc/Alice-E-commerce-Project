@@ -59,7 +59,7 @@
       </div>
     </div>  
     <section class="landing">
-        <div class="left-box">Our Store</div>
+        <div class="orders-box">My Orders</div>
         <div class="center-box">
             <h1>Welcome To Our Online Store !</h1>
         </div>
@@ -205,11 +205,23 @@
             </div>
             <div class="quantity-selection">
               <label for="quantity">Quantity:</label>
-              <div class="quantity"><input type="number" id="quantity" name="quantity" value="1"></div>
+              <div class="quantity"><input type="number" id="quantity" name="quantity" min="1" value="1"></div>
             </div>
             <button id="addToCartButton">Add to Cart</button>
           </div>
        </div>
+      </div>
+    </div>
+    <div id="checkout-modal" class="checkout-modal">
+      <div class="checkout-modal-content">
+        <h2>Checkout</h2>
+        <div id="checkout-items"></div>
+        <p>Total: KSH <span id="checkout-total">0.00</span></p>
+        <label for="delivery-location">Delivery Location:</label>
+        <input type="text" id="delivery-location">
+        <label for="phone-number">Phone Number:</label>
+        <input type="text" id="phone-number">
+        <button id="place-order-button">Place Order</button>
       </div>
     </div>
     <script src="script.js"></script>
