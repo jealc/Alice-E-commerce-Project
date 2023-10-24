@@ -357,6 +357,7 @@ input {
 #show-more-button {
     padding: 10px 150px;
     background-color: white; 
+    font-family: cursive;
     font-size: 15px;
     font-weight: bold;
     color: black;
@@ -365,6 +366,10 @@ input {
     cursor: pointer;
 }
 
+#show-more-button:hover {
+    background-color: black;
+    color: white;
+}
 .chat-button {
     position: fixed;
     bottom: 20px;
@@ -461,22 +466,28 @@ input {
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    height: 500px;
+    border: 2px solid black;
+    height: 400px;
     width: 600px;
     display: flex;
     align-items: center;
+    border-radius: 10px;
+    font-family: cursive;
+    font-weight: bold;
+    justify-content: space-between;
 }
 
-.close {
+#modal-shoe-price {
+    font-size: 24px;
+}
+/*.close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 20px;
     cursor: pointer;
     color: black;
-}
+}*/
 
 .shoe-details-modal {
     display: flex;
@@ -484,7 +495,27 @@ input {
 }
 
 .shoe-image-modal {
-    height: 300px;
+    height: 350px;
     width: 300px;
     margin: 20px;
+    border: 1px solid black;
+}
+
+#addToCartButton {
+    background-color: darkgray;
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+}
+
+#addToCartButton:hover {
+    background-color: black;
+    color: white;
+}
+
+.quantity {
+    padding: 5px 100px;
+    font-weight: bold;
 }

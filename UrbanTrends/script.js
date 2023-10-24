@@ -112,11 +112,11 @@ function openModal(shoeName, shoePrice, shoeImageSrc) {
   
   // Event listener to close the modal when the close button or outside the modal is clicked
   const modal = document.getElementById("shoeModal");
-  const closeBtn = document.getElementsByClassName("close")[0];
+  //const closeBtn = document.getElementsByClassName("close")[0];
   
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+  //closeBtn.addEventListener("click", () => {
+  //  modal.style.display = "none";
+  //});
   
   window.addEventListener("click", (event) => {
     if (event.target === modal) {
