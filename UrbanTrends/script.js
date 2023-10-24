@@ -123,4 +123,64 @@ function openModal(shoeName, shoePrice, shoeImageSrc) {
       modal.style.display = "none";
     }
   });
-  
+
+// Function to add an item to the cart
+function addToCart() {
+  const shoeName = document.getElementById("modal-shoe-name").textContent;
+  const shoePrice = parseFloat(document.getElementById("modal-shoe-price").textContent.replace("KSH ", ""));
+  const shoeSize = document.getElementById("size").value;
+  const shoeColor = document.getElementById("color").value;
+  const shoeQuantity = parseInt(document.getElementById("quantity").value);
+
+  // Create a new item for the cart
+  const cartItem = document.createElement("div");
+  cartItem.className = "cart-item";
+  cartItem.innerHTML = `
+    <p><strong>${shoeName}</strong> - Size: ${shoeSize}, Color: ${shoeColor}, Quantity: ${shoeQuantity}</p>
+    <p>KSH ${shoePrice * shoeQuantity}</p>
+  `;
+
+  // Add the item to the cart modal
+  const cartItems = document.getElementById("cart-items");
+  cartItems.appendChild(cartItem);
+
+  // Calculate and update the total price
+  const total = calculateTotal();
+  document.getElementById("total-price").textContent = total.toFixed(2);
+
+  // Close the product modal
+  document.getElementById("shoeModal").style.display = "none";
+}
+
+// Function to calculate the total price of items in the cart
+function calculateTotal() {
+  const cartItems = document.querySelectorAll(".cart-item");
+  let total = 0;
+
+  cartItems.forEach((item) => {
+    const priceString = item.querySelector("p:last-child").textContent;
+    const price = parseFloat(priceString.replace("KSH ", ""));
+    total += price;
+  });
+
+  return total;
+}
+
+// Event listener to open the cart modal when the cart button is clicked
+const cartButton = document.getElementById("cart-button");
+const cartModal = document.getElementById("cart-modal");
+cartButton.addEventListener("click", () => {
+  cartModal.style.display = "block";
+});
+
+// Event listener to close the cart modal when the close button is clicked
+const closeCartButton = document.getElementById("close-cart");
+closeCartButton.addEventListener("click", () => {
+  cartModal.style.display = "none";
+});
+
+// Event listener to handle the "Add to Cart" button click
+const addToCartButton = document.getElementById("addToCartButton");
+addToCartButton.addEventListener("click", () => {
+  addToCart();
+});
