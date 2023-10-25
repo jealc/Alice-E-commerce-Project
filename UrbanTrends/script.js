@@ -337,3 +337,12 @@ function getRating() {
   }
   return 0;
 }
+
+// Open and close the Inventory Pop-up
+document.getElementById("open-inventory-popup").addEventListener("click", function() {
+  document.getElementById("inventory-popup").style.display = "block";
+});
+
+document.getElementById("close-inventory-popup").addEventListener("click", function() {
+  document.getElementById("inventory-popup").style.display = "none";
+});

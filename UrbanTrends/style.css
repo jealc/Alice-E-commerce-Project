@@ -317,6 +317,46 @@ input {
     color: darkviolet;
 }
 
+#inventory-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+}
+  
+.popup-content {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    height: 500px;
+    width: 300px;
+}
+  
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+  
+ul {
+    list-style: none;
+    padding: 0;
+}
+  
+li {
+    margin-bottom: 10px;
+}
+  
 #content-box2 {
     background-image: url(https://img.freepik.com/premium-photo/golden-correct-sign-with-five-stars-inside-message-box-best-quality-assurance-guarantee-product-iso-service-concept-by-3d-render_50039-3733.jpg);
     background-size: cover;
