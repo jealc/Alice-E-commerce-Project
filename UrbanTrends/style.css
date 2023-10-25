@@ -373,11 +373,6 @@ input {
     color: white;
 }
 
-#load-more-section {
-    text-align: center;
-    margin-top: 20px;
-}
-
 #show-more-button {
     padding: 10px 150px;
     background-color: white; 
@@ -394,6 +389,11 @@ input {
     background-color: black;
     color: white;
 }
+
+.hidden {
+    display: none;
+}
+
 .chat-button {
     position: fixed;
     bottom: 20px;

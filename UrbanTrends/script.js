@@ -264,3 +264,21 @@ function calculateTotal() {
 
   return total;
 }
+
+
+// Get the "Show More" button and the hidden section
+const showMoreButton = document.getElementById('show-more-button');
+const hiddenSection = document.querySelector('.item-boxes.hidden');
+
+// Add a click event listener to the "Show More" button
+showMoreButton.addEventListener('click', function() {
+  // Toggle the hidden class on the second section to show/hide it
+  hiddenSection.classList.toggle('hidden');
+
+  // Change the button text based on the section's visibility
+  if (hiddenSection.classList.contains('hidden')) {
+    showMoreButton.textContent = 'Show More';
+  } else {
+    showMoreButton.textContent = 'Show Less';
+  }
+});
