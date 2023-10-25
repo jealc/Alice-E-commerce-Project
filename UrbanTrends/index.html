@@ -59,21 +59,45 @@
       </div>
     </div>  
     <section class="landing">
-        <div class="left-box"><h3>My Orders</h3>
-          <div class="orders-box"></div>
-          <button class="received-button">Received</button>
+      <div class="left-box"><h3>My Orders</h3>
+        <div class="orders-box"></div>
+        <button class="received-button">Received</button>
+      </div>
+      <div class="center-box">
+        <h1>Welcome To Our Online Store !</h1>
+      </div>
+      <div class="content-container">
+        <div class="content-box" id="content-box1">
+          <p>View Our Entire Inventory</p>
         </div>
-        <div class="center-box">
-            <h1>Welcome To Our Online Store !</h1>
+        <div class="content-box" id="content-box2">
+          <p id="open-rate-review-modal">Rate & Review your Experience</p>
         </div>
-        <div class="content-container">
-            <div class="content-box" id="content-box1">
-              <p>View Our Entire Inventory</p>
+      </div>
+      <div id="rate-review-modal" class="rate-review-modal">
+        <div class="rate-review-modal-content">
+          <span id="close-rate-review-button" class="close-rate-review-button">&times;</span>
+          <div class="rate-review-ratings-and-review-section">
+            <h3>Ratings and Reviews:</h3>
+            <div id="ratings-and-reviews"></div>
+          </div>
+          <div class="rate-review-ratings-section">
+            <h3>Rate your experience:</h3>
+            <div class="rate-review-stars" id="star-rating">
+              <span class="rate-review-star" data-rating="1">☆</span>
+              <span class="rate-review-star" data-rating="2">☆</span>
+              <span class="rate-review-star" data-rating="3">☆</span>
+              <span class="rate-review-star" data-rating="4">☆</span>
+              <span class="rate-review-star" data-rating="5">☆</span>
             </div>
-            <div class="content-box" id="content-box2">
-              <p>Rate & Review your Experience</p>
-            </div>
+          </div>
+          <div class="rate-review-write-review-section">
+            <h3>Write a review:</h3>
+            <textarea id="review-text" rows="4" placeholder="Write your review here..."></textarea>
+          </div>
+          <button id="submit-review">Submit</button>
         </div>
+      </div>
     </section>
     <br>
     <section>
@@ -94,7 +118,7 @@
               <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
             </div>
             <div class="shoe-details">
-              <div id="shoe-name" class="shoe-name"><h1>Jordan 2</h1></div>
+              <div id="shoe-name" class="shoe-name"><h1>Jordan 4</h1></div>
               <div id="shoe-price" class="shoe-price">KSH 1500</div>
               <button id="view-button" class="view-button">View</button>
             </div>
@@ -104,7 +128,7 @@
               <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
             </div>
             <div class="shoe-details">
-              <div id="shoe-name" class="shoe-name"><h1>Jordan 3</h1></div>
+              <div id="shoe-name" class="shoe-name"><h1>Jordan 6</h1></div>
               <div id="shoe-price" class="shoe-price">KSH 1000</div>
               <button id="view-button" class="view-button">View</button>
             </div>
@@ -114,7 +138,7 @@
               <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
             </div>
             <div class="shoe-details">
-              <div id="shoe-name" class="shoe-name"><h1>Jordan 4</h1></div>
+              <div id="shoe-name" class="shoe-name"><h1>Air Force</h1></div>
               <div id="shoe-price" class="shoe-price">KSH 3000</div>
               <button id="view-button" class="view-button">View</button>
             </div>
@@ -124,7 +148,7 @@
               <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
             </div>
             <div class="shoe-details">
-              <div id="shoe-name" class="shoe-name"><h1>Jordan 5</h1></div>
+              <div id="shoe-name" class="shoe-name"><h1>Alexander Mcqueen</h1></div>
               <div id="shoe-price" class="shoe-price">KSH 4000</div>
               <button id="view-button" class="view-button">View</button>
             </div>
@@ -134,7 +158,7 @@
               <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
             </div>
             <div class="shoe-details">
-              <div id="shoe-name" class="shoe-name"><h1>Jordan 6</h1></div>
+              <div id="shoe-name" class="shoe-name"><h1>Cleets</h1></div>
               <div id="shoe-price" class="shoe-price">KSH 2500</div>
               <button id="view-button" class="view-button">View</button>
             </div>
@@ -144,7 +168,7 @@
               <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
             </div>
             <div class="shoe-details">
-              <div id="shoe-name" class="shoe-name"><h1>Jordan 7</h1></div>
+              <div id="shoe-name" class="shoe-name"><h1>Boots</h1></div>
               <div id="shoe-price" class="shoe-price">KSH 2700</div>
               <button id="view-button" class="view-button">View</button>
             </div>
@@ -154,7 +178,7 @@
               <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
             </div>
             <div class="shoe-details">
-              <div id="shoe-name" class="shoe-name"><h1>Jordan 8</h1></div>
+              <div id="shoe-name" class="shoe-name"><h1>Mary Janes</h1></div>
               <div id="shoe-price" class="shoe-price">KSH 1700</div>
               <button id="view-button" class="view-button">View</button>
             </div>
@@ -169,7 +193,7 @@
             <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
           </div>
           <div class="shoe-details">
-            <div id="shoe-name" class="shoe-name"><h1>Jordan 1</h1></div>
+            <div id="shoe-name" class="shoe-name"><h1>Trainers</h1></div>
             <div id="shoe-price" class="shoe-price">KSH 2000</div>
             <button id="view-button" class="view-button">View</button>
           </div>
@@ -179,7 +203,7 @@
             <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
           </div>
           <div class="shoe-details">
-            <div id="shoe-name" class="shoe-name"><h1>Jordan 2</h1></div>
+            <div id="shoe-name" class="shoe-name"><h1>Dress Shoes</h1></div>
             <div id="shoe-price" class="shoe-price">KSH 1500</div>
             <button id="view-button" class="view-button">View</button>
           </div>
@@ -189,7 +213,7 @@
             <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
           </div>
           <div class="shoe-details">
-            <div id="shoe-name" class="shoe-name"><h1>Jordan 3</h1></div>
+            <div id="shoe-name" class="shoe-name"><h1>Vans</h1></div>
             <div id="shoe-price" class="shoe-price">KSH 1000</div>
             <button id="view-button" class="view-button">View</button>
           </div>
@@ -199,7 +223,7 @@
             <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
           </div>
           <div class="shoe-details">
-            <div id="shoe-name" class="shoe-name"><h1>Jordan 4</h1></div>
+            <div id="shoe-name" class="shoe-name"><h1>Converse</h1></div>
             <div id="shoe-price" class="shoe-price">KSH 3000</div>
             <button id="view-button" class="view-button">View</button>
           </div>
@@ -209,7 +233,7 @@
             <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
           </div>
           <div class="shoe-details">
-            <div id="shoe-name" class="shoe-name"><h1>Jordan 5</h1></div>
+            <div id="shoe-name" class="shoe-name"><h1>Crocs</h1></div>
             <div id="shoe-price" class="shoe-price">KSH 4000</div>
             <button id="view-button" class="view-button">View</button>
           </div>
@@ -219,7 +243,7 @@
             <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
           </div>
           <div class="shoe-details">
-            <div id="shoe-name" class="shoe-name"><h1>Jordan 6</h1></div>
+            <div id="shoe-name" class="shoe-name"><h1>Sandals</h1></div>
             <div id="shoe-price" class="shoe-price">KSH 2500</div>
             <button id="view-button" class="view-button">View</button>
           </div>
@@ -229,7 +253,7 @@
             <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
           </div>
           <div class="shoe-details">
-            <div id="shoe-name" class="shoe-name"><h1>Jordan 7</h1></div>
+            <div id="shoe-name" class="shoe-name"><h1>Platforms</h1></div>
             <div id="shoe-price" class="shoe-price">KSH 2700</div>
             <button id="view-button" class="view-button">View</button>
           </div>
@@ -239,7 +263,7 @@
             <img id="shoe-image" class="shoe-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7wnzmw.png" alt="Shoe 1">
           </div>
           <div class="shoe-details">
-            <div id="shoe-name" class="shoe-name"><h1>Jordan 8</h1></div>
+            <div id="shoe-name" class="shoe-name"><h1>Skate shoes</h1></div>
             <div id="shoe-price" class="shoe-price">KSH 1700</div>
             <button id="view-button" class="view-button">View</button>
           </div>

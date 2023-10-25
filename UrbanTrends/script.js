@@ -298,3 +298,42 @@ showMoreButton.addEventListener('click', function() {
     showMoreButton.textContent = 'Show Less';
   }
 });
+
+document.getElementById('open-rate-review-modal').addEventListener('click', function() {
+  document.getElementById('rate-review-modal').style.display = 'block';
+});
+
+document.getElementById('close-rate-review-button').addEventListener('click', function() {
+  document.getElementById('rate-review-modal').style.display = 'none';
+});
+
+const stars = document.querySelectorAll('.rate-review-star');
+stars.forEach(function(star) {
+  star.addEventListener('click', function() {
+      const rating = parseInt(star.getAttribute('data-rating'));
+      stars.forEach(function(s, index) {
+          if (index < rating) {
+              s.innerHTML = '★';
+              s.style.color = 'gold';
+          } else {
+              s.innerHTML = '☆';
+              s.style.color = 'black';
+          }
+      });
+  });
+});
+
+document.getElementById('submit-review').addEventListener('click', function() {
+  const reviewText = document.getElementById('review-text').value;
+  // Handle review submission here
+  document.getElementById('ratings-and-reviews').innerHTML += `<p><strong>Rating:</strong> ${getRating()} stars<br><strong>Review:</strong> ${reviewText}</p>`;
+});
+
+function getRating() {
+  for (let i = 0; i < stars.length; i++) {
+      if (stars[i].style.color === 'gold') {
+          return i + 1;
+      }
+  }
+  return 0;
+}

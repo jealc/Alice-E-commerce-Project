@@ -336,6 +336,89 @@ input {
     color: darkviolet;
 }
 
+.rate-review-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 200;
+}
+
+.rate-review-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-family: cursive;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-rate-review-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.rate-review-ratings-and-review-section {
+    margin-top: 5px;
+}
+
+#ratings-and-reviews {
+    border: 1px solid black;
+    height: 100px;
+    width: 350px;
+    max-height: 200px;
+    max-width: 350px;
+    overflow-y: scroll;
+}
+
+.rate-review-stars {
+    font-size: 30px;
+}
+
+.rate-review-star {
+    cursor: pointer;
+}
+
+.rate-review-star:hover {
+    color: gold;
+}
+
+#review-text {
+    width: 350px;
+    max-height: 100px;
+    max-width: 350px;
+}
+
+#submit-review {
+    background-color: darkgray;
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit-review:hover {
+    background-color: black;
+    color: white;
+}
+
 .shouter {
     color: black;
     font-size: 36px;
