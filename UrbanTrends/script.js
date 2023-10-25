@@ -265,6 +265,22 @@ function calculateTotal() {
   return total;
 }
 
+// Get a reference to the "Received" button and the orders box
+const receivedButton = document.querySelector('.received-button');
+const ordersBox = document.querySelector('.orders-box');
+
+// Add a click event listener to the "Received" button
+receivedButton.addEventListener('click', () => {
+  // Clear the content of the orders box
+  ordersBox.innerHTML = '';
+
+  // Create a thank you message element
+  const thankYouMessage = document.createElement('div');
+  thankYouMessage.textContent = 'Thank you for shopping with us. Please leave a review.';
+
+  // Append the thank you message to the orders box
+  ordersBox.appendChild(thankYouMessage);
+});
 
 // Get the "Show More" button and the hidden section
 const showMoreButton = document.getElementById('show-more-button');
