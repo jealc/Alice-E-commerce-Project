@@ -189,8 +189,7 @@ clearCartButton.addEventListener("click", () => {
   document.getElementById("total-price").textContent = "0.00";
 });
 
-
-
+// JavaScript to handle the checkout
 const checkoutButton = document.getElementById("checkout-button");
 const checkoutModal = document.getElementById("checkout-modal");
 const placeOrderButton = document.getElementById("place-order-button");
@@ -299,6 +298,7 @@ showMoreButton.addEventListener('click', function() {
   }
 });
 
+// JavaScript to handle the rating and reviews
 document.getElementById('open-rate-review-modal').addEventListener('click', function() {
   document.getElementById('rate-review-modal').style.display = 'block';
 });
@@ -307,36 +307,29 @@ document.getElementById('close-rate-review-button').addEventListener('click', fu
   document.getElementById('rate-review-modal').style.display = 'none';
 });
 
+let userRating = 0;  // Initialize the user's rating
+
 const stars = document.querySelectorAll('.rate-review-star');
-stars.forEach(function(star) {
+stars.forEach(function(star, index) {
   star.addEventListener('click', function() {
-      const rating = parseInt(star.getAttribute('data-rating'));
-      stars.forEach(function(s, index) {
-          if (index < rating) {
-              s.innerHTML = '★';
-              s.style.color = 'gold';
-          } else {
-              s.innerHTML = '☆';
-              s.style.color = 'black';
-          }
-      });
+    userRating = index + 1;  // Update user's rating based on the clicked star
+    stars.forEach(function(s, i) {
+      if (i <= index) {
+        s.innerHTML = '★';
+        s.style.color = 'gold';
+      } else {
+        s.innerHTML = '☆';
+        s.style.color = 'black';
+      }
+    });
   });
 });
 
 document.getElementById('submit-review').addEventListener('click', function() {
   const reviewText = document.getElementById('review-text').value;
-  // Handle review submission here
-  document.getElementById('ratings-and-reviews').innerHTML += `<p><strong>Rating:</strong> ${getRating()} stars<br><strong>Review:</strong> ${reviewText}</p>`;
+  // Use the userRating variable to get the selected rating
+  document.getElementById('ratings-and-reviews').innerHTML += `<p><strong>Rating:</strong> ${userRating} stars<br><strong>Review:</strong> ${reviewText}</p>`;
 });
-
-function getRating() {
-  for (let i = 0; i < stars.length; i++) {
-      if (stars[i].style.color === 'gold') {
-          return i + 1;
-      }
-  }
-  return 0;
-}
 
 // Open and close the Inventory Pop-up
 document.getElementById("open-inventory-popup").addEventListener("click", function() {
