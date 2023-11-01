@@ -348,13 +348,11 @@ input {
     cursor: pointer;
 }
   
-ul {
+#inventory-list {
     list-style: none;
     padding: 0;
-}
-  
-li {
-    margin-bottom: 10px;
+    font-size: 18px;
+    color: blue;
 }
   
 #content-box2 {
