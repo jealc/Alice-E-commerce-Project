@@ -1,2 +1,2 @@
-# Alice-E-commerce-Project
+E-commerce-Project
 !First steps.
